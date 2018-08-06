@@ -5,7 +5,6 @@
 <img src="https://github.com//qnfzks55/webpack_lmj/blob/master/profile.jpg?raw=true" />
 
 ## 주제 선정 이유
-이미 다해서 할께 없어요ㅜ
 
 ## 목차
 
