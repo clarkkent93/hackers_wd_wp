@@ -5,6 +5,7 @@
 <img src="https://github.com//qnfzks55/webpack_lmj/blob/master/profile.jpg?raw=true" />
 
 ## 주제 선정 이유
+:)
 
 ## 목차
 
@@ -153,6 +154,24 @@ var clickEvent = function clickEvent() {
 
 <img src="https://github.com//qnfzks55/webpack_lmj/blob/master/w_scss.jpg?raw=true" />
 
+3. `Webpack` 에서 `SCSS` 를 `Javascript` 로 해석할 수 있게 `loader` 를 설치한다.<br />
+`$ npm i -D node-sass css-loader style-loader sass-loader`
+
+> * `style-loader`, `css-loader` : 보통 CSS를 번들링하기 위해서 쓰는 `loader` 세트이다.
+> * `sass-loader` : `scss` 및 `sass` 를 해석할 수 있게 해주는 `loader` 이다.
+
+```javascript
+module: {
+	rules: [ 
+		{
+			test: /\.(scss|sass)$/, 
+			exclude: /node_modules/,
+			use: ['style-loader', 'css-loader', 'sass-loader']
+		},
+	]
+}
+```
+
 ### SASS와 SCSS의 차이
 * `Sass` (indented Syntax 들여쓰기 문법)
     * 이전 버전으로 `Sass` 확장자는 `Ruby`의 영향을 받은 간결한 문법을 사용한다.
@@ -287,8 +306,8 @@ output: { // 배포 파일
 filename - 번들된 파일의 이름을 설정
 
 #### 4) module - loaders
-1. `Webpack` 에서는 `css`, 이미지 파일 등을 모듈로 해석하는데, 모듈로 해석하는데 필요한 것들이 `loader` 이다.
-2. `js` 파일에서 아래와 같이 `css` 파일을 불러올수 있는 재밌는 `import` 를 실행 할 수있다. 이외에도 `php`, `json`, `html` 등 
+1. `Webpack` 에서는 `css`, 이미지 파일 등을 `Js` 모듈로 해석하는데, `Js` 모듈로 해석하는데 필요한 것들이 `loader` 이다.
+2. `js` 파일에서 아래와 같이 `css` 파일 등을 불러올수 있는 재밌는 `import` 를 실행 할 수있다. 이외에도 `php`, `json`, `html` 등 
 많은 파일을 `import` 및 `require` 할수 있다. (물론 `loader`로 해당 확장자 파일을 `Webpack`이 해석할 수있도록 세팅해야 한다.)
 3. 앞에서 설명한 `babel` 을 주로 `Webpack`을 통해서 `loader` 설정을 통해 편리하게 사용할 수 있다.
 
